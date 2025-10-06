@@ -1,0 +1,16 @@
+# Entornos y caches
+.venv*
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+
+# Carpeta de pruebas local
+tmp/
+
+# Datos locales opcionales
+*.csv
+!diabetes.csv          # (si quieres mantener este CSV concreto)
+
+# Modelos grandes (si no quieres versionarlos)
+# *.pkl

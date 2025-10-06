@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 from core import load_artifacts, predict_df
 
+st.set_page_config(page_title="Predicción de diabetes", page_icon="🩺", layout="centered")
 @st.cache_resource
 def get_artifacts():
     bundle, model, policy = load_artifacts()
@@ -12,7 +13,7 @@ bundle, model, policy = get_artifacts()
 FEATURES = bundle["feature_cols"]
 DEFAULT_THR = float(policy["threshold"])
 
-st.set_page_config(page_title="Predicción de diabetes", page_icon="🩺", layout="centered")
+
 st.title("🩺 Predicción de diabetes (SVM + SMOTE)")
 st.caption("Preprocesado: 0→NaN, imputación mediana, capping IQR. Modelo: SVM-RBF + SMOTE. Umbral por CV (F2*).")
 
